@@ -1,5 +1,3 @@
-// pub mod eyeoh;
-
 use std::io;
 
 pub fn gets() -> Result<String, String> {
