@@ -2,6 +2,8 @@
 
 This Rust library aims to make getting command line input easier for simple Rust command line tools. So far it only retrieves `String`s.
 
+I'm new to Rust so bare with me!
+
 ## Example
 
 This library provides a `gets` function that is similar to Ruby's `gets` function (short for "get string").
@@ -44,7 +46,9 @@ eyeoh = { path = "/path/to/directory/eyeoh" }
 
 Please submit an issue or pull request! 
 
-Somethings I'm still figuring out:
+
+## Somethings I'm still figuring out:
+
   - Should the `gets` method return a type of `Result` or something else?  Maybe just `String`? `&str`?
   - Should I include an easy way to get an integer (maybe `usize`) or `float` from the command line?
   - Is there some cool way I can use traits/enums to allow a `gets` method to accept a type and attempt to parse the returning value into that type. For example: `let amount:f64 = gets().unwrap();` or `let amount = gets(f64).unwrap();`
