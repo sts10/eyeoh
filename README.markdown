@@ -34,6 +34,8 @@ Since I haven't yet published this to the main crate directory, to use this libr
 eyeoh = { git = "https://github.com/sts10/eyeoh" }
 ```
 
+[reference](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#specifying-dependencies-from-git-repositories)
+
 If you'd rather clone down the library and use a local version, use:
 
 ```toml
