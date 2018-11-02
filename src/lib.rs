@@ -1,4 +1,7 @@
+use std::fs::File;
 use std::io;
+use std::io::BufRead;
+use std::io::BufReader;
 use std::str::FromStr;
 
 pub fn gets() -> io::Result<String> {
@@ -33,4 +36,24 @@ pub fn ensure<T: FromStr>(try_again: &str) -> io::Result<T> {
         // eprintln!("{}", try_again);
         // and then let the loop cycle
     }
+}
+
+pub fn read_by_line<T: FromStr>(file_path: String) -> io::Result<Vec<T>> {
+    let mut vec = Vec::new();
+    let f = match File::open(file_path) {
+        Ok(res) => res,
+        Err(e) => return Err(e),
+    };
+    let file = BufReader::new(&f);
+    for line in file.lines() {
+        // vec.push(line?);
+        match line?.parse() {
+            Ok(l) => vec.push(l),
+            Err(e) => {
+                eprintln!("Error");
+                continue;
+            }
+        }
+    }
+    Ok(vec)
 }
