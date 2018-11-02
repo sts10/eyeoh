@@ -18,9 +18,6 @@ pub fn ensure<T: FromStr>(try_again: &str) -> io::Result<T> {
             Ok(l) => l,
             Err(e) => return Err(e),
         };
-        // alternatively
-        // let line = gets()?;
-
         match line.parse() {
             Ok(res) => return Ok(res),
             // otherwise, display inputted "try again" message
@@ -30,17 +27,12 @@ pub fn ensure<T: FromStr>(try_again: &str) -> io::Result<T> {
                 continue;
             }
         };
-
-        // alternatively
-        // if let Ok(res) = line.parse() { return res; }
-        // eprintln!("{}", try_again);
-        // and then let the loop cycle
     }
 }
 
 pub fn read_by_line<T: FromStr>(file_path: &str) -> io::Result<Vec<T>> {
     let mut vec = Vec::new();
-    let f = match File::open(file_path.trim_end_matches(" ")) {
+    let f = match File::open(file_path.trim_matches(|c| c == '\'' || c == ' ')) {
         Ok(res) => res,
         Err(e) => return Err(e),
     };
@@ -48,7 +40,7 @@ pub fn read_by_line<T: FromStr>(file_path: &str) -> io::Result<Vec<T>> {
     for line in file.lines() {
         match line?.parse() {
             Ok(l) => vec.push(l),
-            Err(e) => {
+            Err(_e) => {
                 eprintln!("Error");
                 continue;
             }
