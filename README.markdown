@@ -2,7 +2,7 @@
 
 This Rust library aims to make getting command line input easier for simple Rust command line tools. 
 
-If you're looking for something more advanced, check out [getops](https://docs.rs/getopts/0.2.18/getopts/) or [clap](https://docs.rs/clap/2.32.0/clap/).
+If you're looking for something more advanced, check out [getops](https://docs.rs/getopts/0.2.18/getopts/) or [clap](https://github.com/clap-rs/clap).
 
 I'm new to Rust so bare with me!
 
@@ -31,7 +31,7 @@ Note that `gets` does trim off the newline character at the end of the user's in
 
 ## Example 2: `ensure`
 
-`ensure` is a bit more advanced than `gets`. `ensure` attempts to `parse` the user's input into the type that you're calling to (in the example below, that `f64`). If the user's input can't be parsed into the assigned type, the function will loop and ask the user to try again, displaying the string (`str`) that is passed to `ensure`.
+`ensure` is a bit more advanced than `gets`. `ensure` attempts to `parse` the user's input into the type that you're calling to (in the example below, that `f64`, a float). If the user's input can't be parsed into the assigned type, the function will loop and ask the user to try again, displaying the string (`str`) that is passed to `ensure`.
 
 
 ```rust
@@ -101,7 +101,7 @@ Note: `read_by_line` trims off any spaces or single quotes at the beginning or e
 
 ## Adding this library to your project
 
-Since I haven't yet published this to the main crate directory, to use this library, add the following to your `Cargo.toml`:
+Since I haven't yet published this to [Cargo's main crate repository](https://crates.io/), to use this library, add the following to your `Cargo.toml`:
 
 ```toml
 [dependencies]
