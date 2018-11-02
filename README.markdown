@@ -40,8 +40,11 @@ use eyeoh::ensure;
 
 fn main(){
   println!("Enter a number");
+  // declare a new variable and specify a type of f64
   let num: f64 = ensure("Please try again. Enter a number (a float)").unwrap();
 
+  // we're now out of the `ensure` loop, so we can be 
+  // reasonably sure that `num` was parsed into a float Type
   println!(
       "Great, you entered {}, which I'm reasonably sure is a number",
       num
@@ -105,7 +108,6 @@ Since I haven't yet published this to the main crate directory, to use this libr
 eyeoh = { git = "https://github.com/sts10/eyeoh" }
 ```
 
-[reference](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#specifying-dependencies-from-git-repositories)
 
 If you'd rather clone down the library and use a local version, use:
 
@@ -114,6 +116,8 @@ If you'd rather clone down the library and use a local version, use:
 eyeoh = { path = "/path/to/directory/eyeoh" }
 
 ```
+
+(Here's a [reference](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#specifying-dependencies-from-git-repositories) for this Cargo functionality, if you want to learn more)
 
 ## I have a suggestion/idea
 
@@ -127,3 +131,6 @@ Please submit an issue or pull request!
   - How should I test this?
   <!-- - Also: if I'm to have `gets` return a type of `Result`, I'd like to provide a second example that does _not_ use `.unwrap()` following `gets()`. Would I use a `match` statement? -->
 
+## Thanks / Acknowledgments
+
+Huge thank you to [Sergey Bugaev](https://mastodon.technology/@bugaevc) for helping me make this library and its functions safer and more efficient!
