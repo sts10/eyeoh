@@ -2,5 +2,6 @@
 name = "eyeoh"
 version = "0.1.1"
 authors = ["sts10 <sschlinkert@gmail.com>"]
+license = "MIT"
 
 [dependencies]
