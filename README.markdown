@@ -123,8 +123,7 @@ eyeoh = { path = "/path/to/directory/eyeoh" }
 
 Please submit an issue or pull request! 
 
-
-## Somethings I'm still figuring out:
+## Some things I'm still figuring out:
 
   - Should the `gets` method return a type of `Result` or something else?  Maybe just `String`? `&str`?
   - Is there any way to _safely_ have `ensure` just return the Type `T`, as opposed to a `io::Result<T>`?
