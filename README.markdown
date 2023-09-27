@@ -2,7 +2,7 @@
 
 This Rust library aims to make getting command line input easier for simple Rust command line tools. 
 
-If you're looking for something more advanced, check out [getops](https://docs.rs/getopts/0.2.18/getopts/) or [clap](https://github.com/clap-rs/clap).
+If you're looking for something more advanced, check out [getops](https://docs.rs/getopts/latest/getopts/index.html) or [clap](https://github.com/clap-rs/clap).
 
 I'm new to Rust so bare with me! I'm slowly adding to [a blog post about this project](https://sts10.github.io/2018/11/02/eyeoh-rust-library.html) if you want to read more.
 
